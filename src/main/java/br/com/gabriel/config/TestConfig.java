@@ -1,7 +1,7 @@
 package br.com.gabriel.config;
 
 import br.com.gabriel.entities.User;
-import br.com.gabriel.repository.UserRepository;
+import br.com.gabriel.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;

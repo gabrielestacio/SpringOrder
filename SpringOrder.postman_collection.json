@@ -1,0 +1,26 @@
+{
+	"info": {
+		"_postman_id": "2c3660ef-652a-4680-bc38-d3c366a95b21",
+		"name": "SpringOrder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35113252"
+	},
+	"item": [
+		{
+			"name": "Find All Users",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Find By Id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
