@@ -79,7 +79,6 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    @JsonIgnore
     public List<Order> getOrders() {
         return orders;
     }
@@ -99,6 +98,6 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return STR."User \{id} [Name: \{name}, Email: \{email}, Phone: \{phone}, Password: \{password} and Orders: {\{orders.toString()}}]";
+        return STR."User \{id} {Name: \{name}, Email: \{email}, Phone: \{phone}, Password: \{password} and Orders: [\{orders.toString()}]}";
     }
 }

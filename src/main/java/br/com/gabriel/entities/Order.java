@@ -83,6 +83,6 @@ public class Order implements Serializable {
 
     @Override
     public String toString() {
-        return STR."Order \{id} [Moment: \{moment}, Status: \{OrderStatus.valueOf(orderStatus)}, Client: \{client.getId()}]";
+        return STR."Order \{id} {Moment: \{moment}, Status: \{OrderStatus.valueOf(orderStatus)}, Client: \{client.getId()}}";
     }
 }
