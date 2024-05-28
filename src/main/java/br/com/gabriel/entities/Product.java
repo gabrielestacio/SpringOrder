@@ -4,9 +4,7 @@ import jakarta.persistence.*;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 @Table(name = "tb_products")
@@ -22,7 +20,12 @@ public class Product implements Serializable {
     private Double price;
     private String imageUrl;
     @ManyToMany
-    private List<Category> categories = new ArrayList<>();
+    @JoinTable(name = "tb_products_category",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id"))
+    private Set<Category> categories = new HashSet<>();
+    @OneToMany(mappedBy = "id.product")
+    private Set<OrderItem> items = new HashSet<>();
 
     public Product() {}
 
@@ -74,8 +77,16 @@ public class Product implements Serializable {
         this.imageUrl = imageUrl;
     }
 
-    public List<Category> getCategories() {
+    public Set<Category> getCategories() {
         return categories;
+    }
+
+    public Set<Order> getOrders(){
+        Set<Order> orders = new HashSet<>();
+        for(OrderItem oi : items){
+            orders.add(oi.getOrder());
+        }
+        return orders;
     }
 
     @Override
