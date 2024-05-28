@@ -1,5 +1,6 @@
 package br.com.gabriel.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serial;
@@ -19,6 +20,7 @@ public class Payment implements Serializable {
     private Instant moment;
     @OneToOne
     @MapsId
+    @JsonIgnore
     private Order order;
 
     public Payment() {
